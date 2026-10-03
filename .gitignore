@@ -1,0 +1,8 @@
+node_modules/
+dist/
+playwright-report/
+test-results/
+*.onnx
+*.bin
+/data/large/
+esential

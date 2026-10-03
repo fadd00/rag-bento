@@ -1,0 +1,8 @@
+{
+  "status": "unmeasured",
+  "generatedBy": "bench_reference.ts",
+  "generatedAt": null,
+  "device": null,
+  "results": [],
+  "note": "Reference benchmark runner is a placeholder until the worker runner and fixture pack are complete."
+}

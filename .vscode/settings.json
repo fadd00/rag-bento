@@ -1,0 +1,9 @@
+{
+    "chat.tools.terminal.autoApprove": {
+        "/^pwd && bun --version && node --version && python3 --version && git status --short$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "bun": true
+    }
+}
