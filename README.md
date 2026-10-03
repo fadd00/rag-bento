@@ -27,7 +27,7 @@ Use these project settings for the static Pages deployment:
 - Build output directory: `dist`
 - Deploy command: leave empty; Pages publishes the build output itself
 
-Do not use `npx wrangler deploy` for this project. That command targets a Workers deployment and triggers Wrangler's Vite auto-setup. The explicit `plugins: []` in `vite.config.ts` keeps that setup from rejecting the config, but the Pages project should still deploy `dist` directly.
+Do not set a deploy command in the Pages dashboard and do not use `npx wrangler deploy` for this project. That command belongs to the newer Workers Static Assets path and triggers Wrangler's Vite auto-setup. The Pages project should build and publish `dist` directly. See the [Cloudflare Pages build configuration](https://developers.cloudflare.com/pages/configuration/build-configuration/) documentation.
 
 ## Method constraints
 

@@ -27,4 +27,5 @@
 ## Status
 
 - 2026-10-03: M0 foundation created. No measurements are claimed; `docs/M0-results.md` is intentionally blank.
-- 2026-10-03: Added an explicit empty Vite plugin array because Wrangler's non-interactive Vite auto-setup rejects configs without `plugins`. Cloudflare Pages should use build command `bun run build`, output directory `dist`, and no `npx wrangler deploy` deploy command; Worker deploy is a separate option and is not the PRD target.
+- 2026-10-03: The initial Wrangler workaround using an empty Vite plugin array was removed after verifying the current Pages deployment path; this project is not a Workers Vite-plugin project.
+- 2026-10-04: Verified the current Cloudflare Pages build documentation: use `bun run build` with output directory `dist`; Pages handles publishing after a successful build. The logged `npx wrangler deploy` command belongs to the newer Workers Static Assets path, not this Pages project. Sources: https://developers.cloudflare.com/pages/configuration/build-configuration/ and https://developers.cloudflare.com/workers/static-assets/migration-guides/migrate-from-pages/.
