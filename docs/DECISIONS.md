@@ -27,3 +27,4 @@
 ## Status
 
 - 2026-10-03: M0 foundation created. No measurements are claimed; `docs/M0-results.md` is intentionally blank.
+- 2026-10-03: Added an explicit empty Vite plugin array because Wrangler's non-interactive Vite auto-setup rejects configs without `plugins`. Cloudflare Pages should use build command `bun run build`, output directory `dist`, and no `npx wrangler deploy` deploy command; Worker deploy is a separate option and is not the PRD target.
