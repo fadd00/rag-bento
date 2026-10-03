@@ -27,7 +27,17 @@ Use these project settings for the static Pages deployment:
 - Build output directory: `dist`
 - Deploy command: `bun run deploy:pages`
 
-The deploy script runs `npx wrangler pages deploy dist --project-name=rag-bento`. Do not use `npx wrangler deploy`; that command targets a Workers deployment and triggers Wrangler's Vite auto-setup.
+Create the Pages project once before the first deployment:
+
+```sh
+export CLOUDFLARE_ACCOUNT_ID=249c991ca14848a15854569846af41a4
+export CLOUDFLARE_API_TOKEN=your_token_here
+bun run pages:create
+```
+
+The command creates the Pages project named `rag-bento` in the account selected by `CLOUDFLARE_ACCOUNT_ID`. Run it once from a local terminal or CI setup job, not as part of every Pages build. After it succeeds, the deploy command can run `npx wrangler pages deploy dist --project-name=rag-bento`.
+
+Do not use `npx wrangler deploy`; that command targets a Workers deployment and triggers Wrangler's Vite auto-setup.
 
 For Direct Upload in CI, configure `CLOUDFLARE_ACCOUNT_ID` and `CLOUDFLARE_API_TOKEN` as encrypted environment variables. Create a **custom Account API token** scoped to this account with **Account > Cloudflare Pages > Edit** permission. A token can be valid and still fail with API error `10000` if it lacks this permission. See the [Cloudflare Pages Direct Upload](https://developers.cloudflare.com/pages/how-to/use-direct-upload-with-continuous-integration/) and [API token permissions](https://developers.cloudflare.com/fundamentals/api/reference/permissions/) documentation.
 
