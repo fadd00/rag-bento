@@ -10,6 +10,7 @@
     "test": "vitest run",
     "spike": "vite --host 127.0.0.1",
     "bench:reference": "bun scripts/bench_reference.ts",
+    "deploy:pages": "npx wrangler pages deploy dist --project-name=rag-bento",
     "test:python": "python3 -m pytest scripts/test_pack_builders.py"
   },
   "dependencies": {
